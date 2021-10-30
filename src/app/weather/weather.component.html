@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">City</span>
+                <input [(ngModel)]="city" type="text" class="form-control" placeholder="Chennai" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button (click)="getWeather()" type="button" class="btn btn-primary">Get Weather</button>
+        </div>
+        <div class="col-md-12 mt-5">
+            <hr>
+        </div>
+        <div class="col-md-12 mt-5" *ngIf="temperature === ''">
+            <div class="alert alert-warning" role="alert">
+                Enter a valid city name to get the weather information.
+            </div>
+        </div>
+        <div class="col-md-12 mt-5 row" *ngIf="temperature != ''">
+            <div class="col-md-12 mb-4">
+                <h6>You're seeing weather information below for {{ city }}.</h6>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        🌤 Temperature
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ temperature }}° C</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        🍃 Winds
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ winds }} KM/h</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        💧 Humidity
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ humidity }}%</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        🥵 Feels Like
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ feelsLike }}° C</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        👀 Visibility
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ visibility }} Meters</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        🗜 Pressure
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-subtitle">{{ pressure }} Pa</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
